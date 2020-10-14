@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraDomainEvent", "src\ExtraDomainEvent\ExtraDomainEvent.csproj", "{ABA39E05-531D-42E9-834C-8286F30024FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraDomainEvent.Tests", "tests\ExtraDomainEvent.Tests\ExtraDomainEvent.Tests.csproj", "{D4215B03-D43C-467C-8221-CA871735361B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{ABA39E05-531D-42E9-834C-8286F30024FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA39E05-531D-42E9-834C-8286F30024FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA39E05-531D-42E9-834C-8286F30024FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4215B03-D43C-467C-8221-CA871735361B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4215B03-D43C-467C-8221-CA871735361B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4215B03-D43C-467C-8221-CA871735361B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4215B03-D43C-467C-8221-CA871735361B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
