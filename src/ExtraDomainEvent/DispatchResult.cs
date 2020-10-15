@@ -1,4 +1,5 @@
 ﻿using System;
+using ExtraDomainEvent.Exceptions;
 
 namespace ExtraDomainEvent
 {
@@ -38,7 +39,7 @@ namespace ExtraDomainEvent
         /// </summary>
         /// <param name="exception">The error that occurs during handling domain-event.</param>
         /// <returns>An instance of <strong>DispatchResult</strong>.</returns>
-        public static DispatchResult Fail(Exception exception)
+        public static DispatchResult Fail(DomainEventException exception)
         {
             return new DispatchResult(false, exception);
         }
