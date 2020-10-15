@@ -48,7 +48,7 @@ namespace ExtraDomainEvent
             if (!types.Any())
             {
                 throw new DomainEventDispatcherException(
-                    $"The assemblies have no DomainEventHandler.");
+                    "The assemblies have no DomainEventHandler.");
             }
 
             foreach (var theType in types)
@@ -94,7 +94,6 @@ namespace ExtraDomainEvent
         /// <summary>
         /// Dispatches an events that are published and stored in event storage.
         /// </summary>
-        /// <param name="domainEventType">The domain-event type.</param>
         /// <param name="context">The <strong>DomainEventContext</strong> instance.</param>
         /// <typeparam name="TDomainEventContext">The DomainEventContext type.</typeparam>
         /// <returns>A task representing invoking the handler.</returns>
@@ -106,7 +105,8 @@ namespace ExtraDomainEvent
 
             if (handlerType == null)
             {
-                result = DispatchResult.Fail(new Exception($"There is no handler for {@event.GetType().FullName}"));
+                result = DispatchResult.Fail(
+                    new DomainEventException($"There is no handler for {@event.GetType().FullName}", @event));
             }
 
             var instance = Activator.CreateInstance(handlerType!);
@@ -116,7 +116,8 @@ namespace ExtraDomainEvent
 
             if (task == null)
             {
-                result = DispatchResult.Fail(new Exception($"Failed to call Handle method of {handlerType.FullName}"));
+                result = DispatchResult.Fail(
+                    new DomainEventException($"Failed to call Handle method of {handlerType.FullName}", @event));
             }
 
             await task!.ConfigureAwait(false);
