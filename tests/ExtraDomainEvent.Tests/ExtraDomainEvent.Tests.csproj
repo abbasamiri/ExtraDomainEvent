@@ -15,6 +15,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\ExtraDomainEvent\ExtraDomainEvent.csproj" />
+      <ProjectReference Include="..\ExtraDomainEvent.Tests.Empty\ExtraDomainEvent.Tests.Empty.csproj" />
+      <ProjectReference Include="..\ExtraDomainEvent.Tests.System\ExtraDomainEvent.Tests.System.csproj" />
     </ItemGroup>
 
 </Project>
